@@ -1,15 +1,10 @@
-import React from 'react';
-import Navbar from './Navbar';
-import NavbarLink from './NavbarLink';
+import React, { Component } from 'react';
 import './Header.css';
+import Navbar from './Navbar';
 
-export default function Header() {
-  return (
-    <header>
-      <Navbar>
-        <NavbarLink name="Регистрация" />
-        <NavbarLink name="Войти" />
-      </Navbar>
-    </header>
-  );
+export default class Header extends Component {
+  static Navbar = Navbar;
+  render() {
+    return <header>{this.props.children}</header>;
+  }
 }
