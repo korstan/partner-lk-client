@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    justify-content: flex-end;
+    background: #e50079;
+    color: white;
+}
+
+.navbar__links {
+    list-style: none;
+}
+
+.navbar__links li {
+    display: inline-block;
+    cursor: pointer;
+
+    transition: all 0.3s ease 0s;
+    padding: 20px 20px;
+}
+
+.navbar__links li a {
+    color: white;
+    font-size: 18px;
+}
+
+.navbar__links li:hover {
+    background: #ff009c;
+}
