@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function NavbarLink({ name }) {
+export default function NavbarLink({ name, handleClickEvent }) {
   return (
-    <li>
-      <a href="#" onClick={e => e.preventDefault()}>
+    <li onClick={handleClickEvent}>
+      <a href="#" onClick={e => {e.preventDefault()}}>
         {name}
       </a>
     </li>

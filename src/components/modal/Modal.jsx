@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react'
 import './Modal.css';
 
-export default class Modal extends Component {
-  render() {
-    return (
-      <div className="modal hide-modal">
-        <section className="modal-content">
-          {this.props.children}
-        </section>
-      </div>
-    );
-  }
+export default function Modal({show, children, handleClickEvent}) {
+  const modalClassName = show ? 'modal show-modal' : 'modal hide-modal';
+
+  return (
+    <div className={ modalClassName } onClick={handleClickEvent}>
+      <section className="modal-content">{children}</section>
+    </div>
+  );
 }
