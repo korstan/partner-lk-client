@@ -4,7 +4,7 @@ import './LoginForm.css';
 export default class LoginForm extends Component {
   render() {
     return (
-      <div >
+      <div id="login-form__wrapper" className="modal-content">
         <h2>Вход в личный кабинет</h2>
             <form action="" className="login-form">
                 <input type="text" name="" id="" placeholder="Введите e-mail"/>

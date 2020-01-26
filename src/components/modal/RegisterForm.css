@@ -1,13 +1,19 @@
-.form-row {
+#register-form__wrapper {
+    width: 70%;
+    padding: 20px;
+    height: auto;
+}
+
+.register-form__row {
     display: flex;
     align-items: flex-start;
 }
 
-.form-column {
+.register-form__column {
     flex: 50%;
 }
 
-.form-group {
+.register-form__group {
     display: flex;
     padding: 20px 0;
 }
@@ -18,12 +24,12 @@
     text-align: right;
 }
 
-.form-group input {
+.register-form__group input {
     line-height: 20px;
     flex: 2;
 }
 
-.form-group input[type="text" ], .form-group input[type="password" ] {
+.register-form__group input[type="text" ], .form-group input[type="password" ] {
     border: 2px solid lightgray;
     border-radius: 5%;
 }

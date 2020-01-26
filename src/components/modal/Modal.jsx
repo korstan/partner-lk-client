@@ -17,9 +17,7 @@ export default function Modal({
 
   return (
     <div className={modalClassName}>
-      <section className="modal-content">
         {passPropsToModalForm(children, { handleClose })}
-      </section>
     </div>
   );
 }

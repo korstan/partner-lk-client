@@ -38,11 +38,11 @@ export default class RegisterForm extends Component {
 
   render() {
     return (
-      <div>
+      <div id="register-form__wrapper" className="modal-content">
         <h2>Регистрация в личном кабинете</h2>
         <form action="submit">
-          <div className="form-row">
-            <div className="form-column">
+          <div className="register-form__row">
+            <div className="register-form__column">
               <RegisterFormInput
                 name="lastName"
                 type="text"
@@ -83,7 +83,7 @@ export default class RegisterForm extends Component {
                 handleChange={this.handleInput}
               />
             </div>
-            <div className="form-column">
+            <div className="register-form__column">
               <RegisterFormInput
                 name="password"
                 type="password"
