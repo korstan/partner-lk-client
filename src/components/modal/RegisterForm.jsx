@@ -131,16 +131,16 @@ export default class RegisterForm extends Component {
                 handleChange={this.handleInput}
                 required
               />
-              <div className="form-group-btns">
+              <div className="register-form__group-btns">
                 <input
-                  id="register-btn"
-                  className="btn"
+                  id="register-form__register-btn"
+                  className="register-form__btn"
                   type="submit"
                   value="Зарегистрироваться"
                 />
                 <button
-                  id="cancel-btn"
-                  className="btn"
+                  id="register-form__cancel-btn"
+                  className="register-form__btn"
                   onClick={this.props.handleClose}
                 >
                   Отмена

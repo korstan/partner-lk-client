@@ -18,7 +18,7 @@
     padding: 20px 0;
 }
 
-.form-label {
+.register-form__label {
     flex: 1;
     padding-right: 10px;
     text-align: right;
@@ -29,45 +29,40 @@
     flex: 2;
 }
 
-.register-form__group input[type="text" ], .form-group input[type="password" ] {
+.register-form__group input[type="text" ], .register-form__group input[type="password" ] {
+    text-indent: 5px;
     border: 2px solid lightgray;
     border-radius: 5%;
 }
 
-.form-group-checkbox {
+.register-form__group-checkbox {
     display: flex;
     padding: 20px 0;
 }
 
-.form-input-checkbox {
-    flex: 1;
-    text-align: right;
-    padding-right: 10px;
-}
-
-.form-label-checkbox {
+.register-form__label-checkbox {
     flex: 2;
 }
 
-.form-group-btns{
+.register-form__group-btns{
     display: flex;
     justify-content: flex-end;
 }
 
-.btn {
+.register-form__btn {
     cursor: pointer;
     border-radius: 5%;
     padding: 5px 10px;
 }
 
-#register-btn {
+#register-form__register-btn {
     background-color: #225ba6;
     color: white;
     border: 1px solid #1d4e96;
     margin-right: 10px;
 }
 
-#cancel-btn {
+#register-form__cancel-btn {
     background-color: white;
     color: gray;
     border: 1px solid darkgray;
