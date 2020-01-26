@@ -1,0 +1,68 @@
+.form-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-column {
+    flex: 50%;
+}
+
+.form-group {
+    display: flex;
+    padding: 20px 0;
+}
+
+.form-label {
+    flex: 1;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.form-group input {
+    line-height: 20px;
+    flex: 2;
+}
+
+.form-group input[type="text" ], .form-group input[type="password" ] {
+    border: 2px solid lightgray;
+    border-radius: 5%;
+}
+
+.form-group-checkbox {
+    display: flex;
+    padding: 20px 0;
+}
+
+.form-input-checkbox {
+    flex: 1;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.form-label-checkbox {
+    flex: 2;
+}
+
+.form-group-btns{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 5%;
+    padding: 5px 10px;
+}
+
+#register-btn {
+    background-color: #225ba6;
+    color: white;
+    border: 1px solid #1d4e96;
+    margin-right: 10px;
+}
+
+#cancel-btn {
+    background-color: white;
+    color: gray;
+    border: 1px solid darkgray;
+}

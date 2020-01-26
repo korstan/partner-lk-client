@@ -17,7 +17,10 @@ export default class App extends Component {
   }
 
   showRegisterForm() {
-    this.setState({ isModalVisible: true, modalForm: <RegisterForm /> });
+    this.setState({
+      isModalVisible: true,
+      modalForm: <RegisterForm />,
+    });
   }
 
   showLoginForm() {
@@ -28,7 +31,8 @@ export default class App extends Component {
     this.setState({ isModalVisible: true });
   }
 
-  hideModal() {
+  hideModal(e) {
+    e.preventDefault();
     this.setState({ isModalVisible: false, modalForm: null });
   }
 
@@ -47,10 +51,7 @@ export default class App extends Component {
             />
           </Header.Navbar>
         </Header>
-        <Modal
-          show={this.state.isModalVisible}
-          handleClickEvent={this.hideModal}
-        >
+        <Modal show={this.state.isModalVisible} handleClose={this.hideModal}>
           {this.state.modalForm}
         </Modal>
       </div>
