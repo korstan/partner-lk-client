@@ -31,8 +31,7 @@ export default class App extends Component {
     this.setState({ isModalVisible: true });
   }
 
-  hideModal(e) {
-    e.preventDefault();
+  hideModal() {
     this.setState({ isModalVisible: false, modalForm: null });
   }
 
@@ -51,7 +50,7 @@ export default class App extends Component {
             />
           </Header.Navbar>
         </Header>
-        <Modal show={this.state.isModalVisible} handleClose={this.hideModal}>
+        <Modal show={this.state.isModalVisible} handleSubmit={this.hideModal} handleClose={this.hideModal}>
           {this.state.modalForm}
         </Modal>
       </div>

@@ -1,4 +1,52 @@
+#login-form__wrapper {
+    min-width: 20%;
+    padding: 20px;
+}
+
+#login-form__close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background-color: whitesmoke;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 21px;
+}
+
+#login-form__submit-btn {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #255aa6;
+    color: white;
+    border: 1px solid #1d4e96;
+    margin: 10px 0;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.login-form__input {
+    text-indent: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 13pt;
+    margin: 15px 0;
+}
+
+.login-form a {
+    color: #255aa6;
+}
+
+.login-form__password-options {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
 }

@@ -23,6 +23,18 @@ export default class RegisterForm extends Component {
       },
     };
     this.handleInput = this.handleInput.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleClose(e) {
+    e.preventDefault();
+    this.props.handleClose();
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.handleSubmit();
   }
 
   handleInput({ target }) {
@@ -137,11 +149,12 @@ export default class RegisterForm extends Component {
                   className="register-form__btn"
                   type="submit"
                   value="Зарегистрироваться"
+                  onClick={this.handleSubmit}
                 />
                 <button
                   id="register-form__cancel-btn"
                   className="register-form__btn"
-                  onClick={this.props.handleClose}
+                  onClick={this.handleClose}
                 >
                   Отмена
                 </button>
