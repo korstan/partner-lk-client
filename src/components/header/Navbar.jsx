@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavbarLink from './NavbarLink';
+import NavbarLink from 'components/header/NavbarLink';
 
 export default class Navbar extends Component {
   static Link = NavbarLink;

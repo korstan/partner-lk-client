@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LoginFormInput from './LoginFormInput';
-import './LoginForm.css';
+import LoginFormInput from 'components/modal/LoginFormInput';
+import 'components/modal/LoginForm.css';
 
 export default class LoginForm extends Component {
   constructor(props) {

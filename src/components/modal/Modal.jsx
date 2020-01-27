@@ -1,5 +1,5 @@
 import React from 'react';
-import './Modal.css';
+import 'components/modal/Modal.css';
 
 const passPropsToModalForm = (modalForm, props) =>
   React.Children.map(modalForm, child =>

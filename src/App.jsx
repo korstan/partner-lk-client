@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import Header from './components/header/Header';
-import Modal from './components/modal/Modal';
-import RegisterForm from './components/modal/RegisterForm';
-import LoginForm from './components/modal/LoginForm';
+import 'App.css';
+import Header from 'components/header/Header';
+import Modal from 'components/modal/Modal';
+import RegisterForm from 'components/modal/RegisterForm';
+import LoginForm from 'components/modal/LoginForm';
 
 export default class App extends Component {
   constructor(props) {

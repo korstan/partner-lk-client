@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import RegisterFormInput from './RegisterFormInput';
-import RegisterFormCheckbox from './RegisterFormCheckbox';
-import './RegisterForm.css';
+import RegisterFormInput from 'components/modal/RegisterFormInput';
+import RegisterFormCheckbox from 'components/modal/RegisterFormCheckbox';
+import 'components/modal/RegisterForm.css';
 
 export default class RegisterForm extends Component {
   constructor(props) {
