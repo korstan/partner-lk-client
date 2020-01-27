@@ -16,11 +16,17 @@ export default class LoginForm extends Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSwitchToRegisterModal = this.handleSwitchToRegisterModal.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.handleSubmit();
+  }
+
+  handleSwitchToRegisterModal(e) {
+    e.preventDefault();
+    this.props.handleSwitchToRegisterModal();
   }
 
   handleInput({ target }) {
@@ -65,7 +71,7 @@ export default class LoginForm extends Component {
             Войти
           </button>
           <span>
-            Или <a href="">зарегистрироваться</a>
+            Или <a href="" onClick={this.handleSwitchToRegisterModal}>зарегистрироваться</a>
           </span>
         </form>
       </div>

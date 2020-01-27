@@ -8,7 +8,11 @@ import LoginForm from './components/modal/LoginForm';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isModalVisible: false, modalForm: null };
+    this.state = {
+      isModalVisible: false,
+      modalForm: null,
+      modalProps: {},
+    };
 
     this.showRegisterForm = this.showRegisterForm.bind(this);
     this.showLoginForm = this.showLoginForm.bind(this);
@@ -20,11 +24,23 @@ export default class App extends Component {
     this.setState({
       isModalVisible: true,
       modalForm: <RegisterForm />,
+      modalProps: {
+        handleSubmit: this.hideModal,
+        handleClose: this.hideModal,
+      },
     });
   }
 
   showLoginForm() {
-    this.setState({ isModalVisible: true, modalForm: <LoginForm /> });
+    this.setState({
+      isModalVisible: true,
+      modalForm: <LoginForm />,
+      modalProps: {
+        handleSubmit: this.hideModal,
+        handleClose: this.hideModal,
+        handleSwitchToRegisterModal: this.showRegisterForm,
+      },
+    });
   }
 
   showModal() {
@@ -50,7 +66,7 @@ export default class App extends Component {
             />
           </Header.Navbar>
         </Header>
-        <Modal show={this.state.isModalVisible} handleSubmit={this.hideModal} handleClose={this.hideModal}>
+        <Modal show={this.state.isModalVisible} modalProps={this.state.modalProps}>
           {this.state.modalForm}
         </Modal>
       </div>

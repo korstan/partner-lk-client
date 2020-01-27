@@ -4,22 +4,20 @@ import './Modal.css';
 const passPropsToModalForm = (modalForm, props) =>
   React.Children.map(modalForm, child =>
     React.cloneElement(child, {
-      handleSubmit: props.handleSubmit,
-      handleClose: props.handleClose,
+      ...props,
     }),
   );
 
 export default function Modal({
   show,
   children,
-  handleSubmit,
-  handleClose,
+  modalProps,
 }) {
   const modalClassName = show ? 'modal show-modal' : 'modal hide-modal';
 
   return (
     <div className={modalClassName}>
-        {passPropsToModalForm(children, { handleSubmit, handleClose })}
+        {passPropsToModalForm(children, modalProps)}
     </div>
   );
 }
