@@ -1,5 +1,6 @@
 #register-form__wrapper {
     width: 70%;
+    max-width: 1000px;
     padding: 20px;
     height: auto;
 }
@@ -45,6 +46,7 @@
 }
 
 .register-form__group-btns{
+    margin-top: 5px;
     display: flex;
     justify-content: flex-end;
 }

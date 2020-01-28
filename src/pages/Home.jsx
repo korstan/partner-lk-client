@@ -29,13 +29,16 @@ export default class Home extends Component {
       },
     });
   }
-  
+
   showLoginForm() {
     this.setState({
       isModalVisible: true,
       modalForm: <LoginForm />,
       modalProps: {
-        handleSubmit: this.hideModal,
+        handleSubmit: e => {
+          e.preventDefault();
+          window.location.href = `${window.origin}/profile`;
+        },
         handleClose: this.hideModal,
         handleSwitchToRegisterModal: this.showRegisterForm,
       },
@@ -46,7 +49,8 @@ export default class Home extends Component {
     this.setState({ isModalVisible: true });
   }
 
-  hideModal() {
+  hideModal(e) {
+    if (e) e.preventDefault();
     this.setState({ isModalVisible: false, modalForm: null });
   }
 
@@ -65,7 +69,10 @@ export default class Home extends Component {
             />
           </Header.Navbar>
         </Header>
-        <Modal show={this.state.isModalVisible} modalProps={this.state.modalProps}>
+        <Modal
+          show={this.state.isModalVisible}
+          modalProps={this.state.modalProps}
+        >
           {this.state.modalForm}
         </Modal>
       </div>

@@ -9,6 +9,7 @@ export default function RegisterFormInput(props) {
       </label>
       <input
         className="register-form__input"
+        style={props.validated ? null : { borderColor: 'red' }}
         id={props.name}
         name={props.name}
         type={props.type}

@@ -15,13 +15,7 @@ export default class LoginForm extends Component {
     };
 
     this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSwitchToRegisterModal = this.handleSwitchToRegisterModal.bind(this);
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.handleSubmit();
   }
 
   handleSwitchToRegisterModal(e) {
@@ -67,7 +61,7 @@ export default class LoginForm extends Component {
             </label>
             <a href="">Забыли пароль</a>
           </div>
-          <button id="login-form__submit-btn" type="submit" onClick={this.handleSubmit}>
+          <button id="login-form__submit-btn" onClick={this.props.handleSubmit}>
             Войти
           </button>
           <span>
