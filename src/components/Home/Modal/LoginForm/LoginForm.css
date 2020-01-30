@@ -1,10 +1,10 @@
 #login-form__wrapper {
-    min-width: 20%;
-    padding: 20px;
+    min-width: 30%;
+    padding: 40px 60px;
 }
 
 #login-form__wrapper h3 {
-    margin-bottom: 15px;
+    margin-bottom: 35px;
 }
 
 #login-form__close-btn {
@@ -41,6 +41,7 @@
 }
 
 .login-form__input {
+    margin-top: 30px;
     text-indent: 5px;
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -56,6 +57,7 @@
 }
 
 .login-form__password-options {
+    margin-top: 25px;
     font-size: 14px;
     display: flex;
     justify-content: space-between;

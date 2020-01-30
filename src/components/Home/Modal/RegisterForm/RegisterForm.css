@@ -6,7 +6,7 @@
 }
 
 #register-form__wrapper h2 {
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 }
 
 .register-form__row {
@@ -20,7 +20,7 @@
 
 .register-form__group {
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .register-form__group:first-child {
@@ -49,7 +49,7 @@
 }
 
 .register-form__group-btns{
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     justify-content: flex-end;
 }
