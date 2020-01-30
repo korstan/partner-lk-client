@@ -35,38 +35,23 @@ export default class PagesProfile extends Component {
               />
             </InfoSection>
             <InfoSection title="Контактная информация">
-            <InfoSectionElement
+              <InfoSectionElement
                 title="Телефон предприятия"
                 value="+7(111)111-11-11"
               />
-            <InfoSectionElement
+              <InfoSectionElement
                 title="Фактический адрес"
                 value="Российская Федерация,
                 Свердловская обл., ул. Есенина, д.12, офис 345"
               />
-              <InfoSectionElement
-                title="Страна"
-                value="Российская Федерация"
-              />
-              <InfoSectionElement
-                title="Город "
-                value="Екатеринбург"
-              />
-              <InfoSectionElement
-                title="Улица"
-                value="Есенина"
-              />
-              <InfoSectionElement
-                title="Дом"
-                value="12"
-              />
-              <InfoSectionElement
-                title="Офис"
-                value="345"
-              />
+              <InfoSectionElement title="Страна" value="Российская Федерация" />
+              <InfoSectionElement title="Город " value="Екатеринбург" />
+              <InfoSectionElement title="Улица" value="Есенина" />
+              <InfoSectionElement title="Дом" value="12" />
+              <InfoSectionElement title="Офис" value="345" />
             </InfoSection>
             <InfoSection title="Дополнительная информация">
-            <InfoSectionElement
+              <InfoSectionElement
                 title="Ссылка на сайт: "
                 value="https://stackoverflow.com/questions/56332282/is-it-possible-to-display-flexbox-items-in-two-rows-instead-of-one"
               />
@@ -78,10 +63,7 @@ export default class PagesProfile extends Component {
                 title="Сфера интересов организации"
                 value="345"
               />
-              <InfoSectionElement
-                title="Логотип"
-                value="345"
-              />
+              <InfoSectionElement title="Логотип" value="345" />
             </InfoSection>
           </article>
         </main>
