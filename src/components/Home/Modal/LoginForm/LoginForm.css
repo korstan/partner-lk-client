@@ -3,6 +3,10 @@
     padding: 20px;
 }
 
+#login-form__wrapper h3 {
+    margin-bottom: 15px;
+}
+
 #login-form__close-btn {
     cursor: pointer;
     position: absolute;
@@ -23,7 +27,6 @@
     background-color: #255aa6;
     color: white;
     border: 1px solid #1d4e96;
-    margin: 10px 0;
 }
 
 .login-form {
@@ -33,12 +36,19 @@
     align-items: stretch;
 }
 
+.login-form > * {
+    margin-top: 10px;
+}
+
 .login-form__input {
     text-indent: 5px;
     border: 1px solid lightgray;
     border-radius: 5px;
     font-size: 13pt;
-    margin: 15px 0;
+}
+
+.login-form__input:first-child {
+    margin-top: 0;
 }
 
 .login-form a {

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HomeModalRegisterFormCheckbox(props) {
   return (
-    <div className="register-form__group-checkbox" style={props.validated ? null : { border: '2px dotted red' }}>
+    <div className="register-form__group" style={props.validated ? null : { border: '2px dotted red' }}>
       <span className="register-form__label" style={{ color: 'red' }}>{props.required && '*'} </span>
       <label htmlFor={props.name} className="register-form__label-checkbox">
         <input
