@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function LoginFormInput(props) {
+export default function HomeModalLoginFormInput(props) {
   return (
     <input
       className="login-form__input"

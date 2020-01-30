@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import RegisterFormInput from 'components/modal/RegisterFormInput';
-import RegisterFormCheckbox from 'components/modal/RegisterFormCheckbox';
+import HomeModalRegisterFormInput from 'components/Home/Modal/RegisterForm/Input';
+import HomeModalRegisterFormCheckbox from 'components/Home/Modal/RegisterForm/Checkbox';
 import Validator from 'validator';
-import 'components/modal/RegisterForm.css';
+import 'components/Home/Modal/RegisterForm/RegisterForm.css';
 
 const validator = {
   lastName: value => value && Validator.isAlpha(value, 'ru-RU'),
@@ -18,7 +18,7 @@ const validator = {
   personalData: value => value,
 };
 
-export default class RegisterForm extends Component {
+export default class HomeModalRegisterForm extends Component {
   constructor(props) {
     super(props);
 
@@ -61,7 +61,7 @@ export default class RegisterForm extends Component {
         <form action="submit">
           <div className="register-form__row">
             <div className="register-form__column">
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="lastName"
                 type="text"
                 title="Фамилия"
@@ -70,7 +70,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.lastName.validated}
                 handleChange={this.handleInput}
               />
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="firstName"
                 type="text"
                 title="Имя"
@@ -79,7 +79,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.firstName.validated}
                 handleChange={this.handleInput}
               />
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="patronymic"
                 type="text"
                 title="Отчество"
@@ -87,7 +87,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.patronymic.validated}
                 handleChange={this.handleInput}
               />
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="email"
                 type="text"
                 title="E-mail"
@@ -96,7 +96,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.email.validated}
                 handleChange={this.handleInput}
               />
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="phone"
                 type="text"
                 title="Телефон"
@@ -107,7 +107,7 @@ export default class RegisterForm extends Component {
               />
             </div>
             <div className="register-form__column">
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="password"
                 type="password"
                 title="Пароль"
@@ -116,7 +116,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.password.validated && passwordsAreEqual}
                 handleChange={this.handleInput}
               />
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="confirmPassword"
                 type="password"
                 title="Подтверждение"
@@ -125,7 +125,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.confirmPassword.validated && passwordsAreEqual}
                 handleChange={this.handleInput}
               />
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="organization"
                 type="text"
                 title="Организация"
@@ -134,7 +134,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.organization.validated}
                 handleChange={this.handleInput}
               />
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="inn"
                 type="text"
                 title="ИНН"
@@ -143,7 +143,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.inn.validated}
                 handleChange={this.handleInput}
               />
-              <RegisterFormInput
+              <HomeModalRegisterFormInput
                 name="position"
                 type="text"
                 title="Должность"
@@ -152,7 +152,7 @@ export default class RegisterForm extends Component {
                 validated={this.state.newUser.position.validated}
                 handleChange={this.handleInput}
               />
-              <RegisterFormCheckbox
+              <HomeModalRegisterFormCheckbox
                 name="personalData"
                 type="checkbox"
                 title="Я даю согласие на обработку данных"

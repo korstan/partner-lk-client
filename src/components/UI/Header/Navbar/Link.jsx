@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function NavbarLink({ name, handleClickEvent }) {
+export default function HeaderNavbarLink({ name, handleClickEvent }) {
   return (
     <li onClick={handleClickEvent}>
       <a href="#" onClick={e => {e.preventDefault()}}>
@@ -8,4 +8,4 @@ export default function NavbarLink({ name, handleClickEvent }) {
       </a>
     </li>
   );
-}
+} 

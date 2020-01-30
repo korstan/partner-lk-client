@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import LoginFormInput from 'components/modal/LoginFormInput';
-import 'components/modal/LoginForm.css';
+import HomeModalLoginFormInput from 'components/Home/Modal/LoginForm/Input';
+import 'components/Home/Modal/LoginForm/LoginForm.css';
 
-export default class LoginForm extends Component {
+export default class HomeModalLoginForm extends Component {
   constructor(props) {
     super(props);
 
@@ -42,13 +42,13 @@ export default class LoginForm extends Component {
         </div>
         <h3>Вход в личный кабинет</h3>
         <form action="" className="login-form">
-          <LoginFormInput
+          <HomeModalLoginFormInput
             name="email"
             type="text"
             handleChange={this.handleInput}
             placeholder="Введите e-mail"
           />
-          <LoginFormInput
+          <HomeModalLoginFormInput
             name="password"
             type="password"
             handleChange={this.handleInput}

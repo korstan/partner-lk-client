@@ -1,5 +1,5 @@
 import React from 'react';
-import 'components/modal/Modal.css';
+import 'components/Home/Modal/Modal.css';
 
 const passPropsToModalForm = (modalForm, props) =>
   React.Children.map(modalForm, child =>
@@ -8,7 +8,7 @@ const passPropsToModalForm = (modalForm, props) =>
     }),
   );
 
-export default function Modal({
+export default function HomeModal({
   show,
   children,
   modalProps,

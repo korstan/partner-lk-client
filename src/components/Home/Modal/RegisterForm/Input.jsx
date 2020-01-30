@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function RegisterFormInput(props) {
+export default function HomeModalRegisterFormInput(props) {
   return (
     <div className="register-form__group">
       <label htmlFor={props.name} className="register-form__label">

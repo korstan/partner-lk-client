@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import Header from 'components/header/Header';
-import Modal from 'components/modal/Modal';
-import RegisterForm from 'components/modal/RegisterForm';
-import LoginForm from 'components/modal/LoginForm';
+import Header from 'components/UI/Header/Header';
+import HeaderNavbar from 'components/UI/Header/Navbar/Navbar';
+import HeaderNavbarLink from 'components/UI/Header/Navbar/Link';
+import HomeModal from 'components/Home/Modal/Modal';
+import HomeModalRegisterForm from 'components/Home/Modal/RegisterForm/RegisterForm';
+import HomeModalLoginForm from 'components/Home/Modal/LoginForm/LoginForm';
 
-export default class Home extends Component {
+export default class PagesHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +24,7 @@ export default class Home extends Component {
   showRegisterForm() {
     this.setState({
       isModalVisible: true,
-      modalForm: <RegisterForm />,
+      modalForm: <HomeModalRegisterForm />,
       modalProps: {
         handleSubmit: this.hideModal,
         handleClose: this.hideModal,
@@ -33,7 +35,7 @@ export default class Home extends Component {
   showLoginForm() {
     this.setState({
       isModalVisible: true,
-      modalForm: <LoginForm />,
+      modalForm: <HomeModalLoginForm />,
       modalProps: {
         handleSubmit: e => {
           e.preventDefault();
@@ -58,23 +60,23 @@ export default class Home extends Component {
     return (
       <div className="Home">
         <Header>
-          <Header.Navbar>
-            <Header.Navbar.Link
+          <HeaderNavbar>
+            <HeaderNavbarLink
               name="Регистрация"
               handleClickEvent={this.showRegisterForm}
             />
-            <Header.Navbar.Link
+            <HeaderNavbarLink
               name="Войти"
               handleClickEvent={this.showLoginForm}
             />
-          </Header.Navbar>
+          </HeaderNavbar>
         </Header>
-        <Modal
+        <HomeModal
           show={this.state.isModalVisible}
           modalProps={this.state.modalProps}
         >
           {this.state.modalForm}
-        </Modal>
+        </HomeModal>
       </div>
     );
   }
