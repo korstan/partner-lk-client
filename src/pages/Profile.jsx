@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from 'components/header/Header';
+import InfoSection from 'components/profile/InfoSection';
 
 export default class Profile extends Component {
   static a = 1;
@@ -15,7 +16,16 @@ export default class Profile extends Component {
             />
           </Header.Navbar>
         </Header>
-        <h1>Profile</h1>
+        <h2>Профиль </h2>
+        <InfoSection title="Основная информация об организации">
+        
+        </InfoSection>
+        <InfoSection title="Контактная информация об организации">
+
+        </InfoSection>
+        <InfoSection title="Дополнительная информация об организации">
+
+        </InfoSection>
       </div>
     );
   }

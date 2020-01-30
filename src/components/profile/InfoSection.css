@@ -1,0 +1,15 @@
+.info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    width:90%;
+    padding: 10px 20px;
+    margin-top: 10px; 
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 rgba(220,220,220,1);
+}
+
+.info-section h3{
+    margin-bottom: 10px;
+}
