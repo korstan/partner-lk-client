@@ -2,13 +2,30 @@ h2 {
   margin-top: 15px;
 }
 
-article {
+.info-container {
   background-color: white;
   padding: 20px 20px;
   overflow: inherit;
-  margin-top: 10px;
   border-radius: 10px;
+  border-top-right-radius: 0;
   box-shadow: 0 0 5px 0 rgba(220, 220, 220, 1);
+  z-index: 100;
+}
+
+.info-tabs__container {
+  display: flex;
+  position: static;
+  justify-content: flex-end;
+}
+
+.info-tabs__element {
+  cursor: pointer;
+  margin-left: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 5px 15px 8px ;
+  margin-top: 10px;
+  background-color: white;
 }
 
 .info-section {
@@ -27,6 +44,11 @@ article {
 }
 .info-section__element span {
   margin-top: 10px;
+}
+
+.info-section__element input, textarea {
+  margin-top: 10px;
+  width: 100%;
 }
 
 .info-section_data-group {

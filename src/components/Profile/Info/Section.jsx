@@ -1,7 +1,7 @@
 import React from 'react';
-import './InfoSection.css';
+import './Info.css';
 
-export default function InfoSection({ title, children }) {
+export default function ProfileInfoSection({ title, children }) {
   return (
       <section className="info-section">
         <h3>{title}</h3>
