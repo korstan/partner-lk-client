@@ -48,6 +48,7 @@ h2 {
 }
 
 .info-section__element input, textarea {
+  resize: none;
   margin-top: 10px;
   width: 100%;
 }
