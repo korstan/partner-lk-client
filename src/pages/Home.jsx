@@ -6,7 +6,7 @@ import HomeModal from 'components/Home/Modal/Modal';
 import HomeModalRegisterForm from 'components/Home/Modal/RegisterForm/RegisterForm';
 import HomeModalLoginForm from 'components/Home/Modal/LoginForm/LoginForm';
 
-export default class PagesHome extends Component {
+export default class PageHome extends Component {
   constructor(props) {
     super(props);
     this.state = {

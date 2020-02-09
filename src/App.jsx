@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import PagesHome from 'pages/Home';
-import PagesProfile from 'pages/Profile';
+import PageHome from 'pages/Home';
+import PageProfile from 'pages/Profile/Profile';
 import 'App.css';
 
 export default function App() {
@@ -9,10 +9,10 @@ export default function App() {
     <Router>
       <Switch>
         <Route path="/profile">
-          <PagesProfile />
+          <PageProfile />
         </Route>
         <Route path="/">
-          <PagesHome />
+          <PageHome />
         </Route>
       </Switch>
     </Router>
