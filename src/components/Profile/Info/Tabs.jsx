@@ -9,19 +9,19 @@ export default function ProfileInfoTabs({
   return (
     <div className="info-tabs__container">
       {enableEditMode && (
-        <div onClick={handleSave} className="info-tabs__element">
+        <button type="button" onClick={handleSave} className="info-tabs__element">
           Сохранить
-        </div>
+        </button>
       )}
       {enableEditMode && (
-        <div onClick={handleCancel} className="info-tabs__element">
+        <button type="button" onClick={handleCancel} href="#" className="info-tabs__element">
           Отмена
-        </div>
+        </button>
       )}
       {!enableEditMode && (
-        <div onClick={handleEdit} className="info-tabs__element">
+        <button type="button" onClick={handleEdit} href="#" className="info-tabs__element">
           Редактировать
-        </div>
+        </button>
       )}
     </div>
   );
