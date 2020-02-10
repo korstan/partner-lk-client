@@ -16,6 +16,7 @@ export default class ProfileEditFormContainer extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.submitInfo = this.submitInfo.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,11 @@ export default class ProfileEditFormContainer extends Component {
         this.setState({ info: res.data });
       })
       .then(() => this.setState({ infoIsLoading: false }));
+  }
+
+  async submitInfo() {
+    await Axios.put(URL, this.state.info);
+    this.props.routeToProfile();
   }
 
   handleChange({ target }) {
@@ -42,7 +48,7 @@ export default class ProfileEditFormContainer extends Component {
         <ProfileTabsContainer>
           <ProfileTabsElement
             title="Cохранить"
-            onClick={this.props.routeToProfile}
+            onClick={this.submitInfo}
           />
           <ProfileTabsElement
             title="Отмена"
