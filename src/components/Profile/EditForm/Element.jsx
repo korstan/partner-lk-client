@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ProfileEditFormElement({type, name, value, title}) {
+export default function ProfileEditFormElement({type, name, value, title, onChange}) {
   let inputElement;
   if (type === 'textarea')
     inputElement = (
@@ -9,6 +9,7 @@ export default function ProfileEditFormElement({type, name, value, title}) {
         id={name}
         value={value}
         rows="5"
+        onChange={onChange}
       ></textarea>
     );
   else
@@ -18,6 +19,7 @@ export default function ProfileEditFormElement({type, name, value, title}) {
         id={name}
         name={name}
         value={value}
+        onChange={onChange}
       />
     );
 

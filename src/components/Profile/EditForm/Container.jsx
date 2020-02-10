@@ -14,6 +14,8 @@ export default class ProfileEditFormContainer extends Component {
       infoIsLoading: true,
       info: {},
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +24,16 @@ export default class ProfileEditFormContainer extends Component {
         this.setState({ info: res.data });
       })
       .then(() => this.setState({ infoIsLoading: false }));
+  }
+
+  handleChange({ target }) {
+    const { name, value } = target;
+    this.setState(previousState => ({
+      info: {
+        ...previousState.info,
+        [name]: value,
+      },
+    }));
   }
 
   render() {
@@ -40,7 +52,10 @@ export default class ProfileEditFormContainer extends Component {
         {this.state.infoIsLoading ? (
           <div>Loading...</div>
         ) : (
-          <ProfileEditForm info={this.state.info} />
+          <ProfileEditForm
+            info={this.state.info}
+            handleChange={this.handleChange}
+          />
         )}
       </>
     );
