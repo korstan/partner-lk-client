@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ProfileInfoSection from 'components/Profile/Info/Section';
-import ProfileInfoReadFormElement from 'components/Profile/Info/ReadForm/Element';
-import ProfileInfoEditFormElement from 'components/Profile/Info/EditForm/Element';
+import ProfileSection from 'components/Profile/Section';
+import ProfileReadFormElement from 'components/Profile/ReadForm/Element';
+import ProfileEditFormElement from 'components/Profile/EditForm/Element';
 
-export default class ProfileInfoEditForm extends Component {
+export default class ProfileEditForm extends Component {
   constructor(props) {
     super(props);
 
@@ -20,59 +20,59 @@ export default class ProfileInfoEditForm extends Component {
   render() {
     return (
       <form className="info-container">
-        <ProfileInfoSection title="Основная информация">
-          <ProfileInfoReadFormElement
+        <ProfileSection title="Основная информация">
+          <ProfileReadFormElement
             title="Название регистрируемой организации"
             value={this.state.info.organization}
           />
-          <ProfileInfoReadFormElement
+          <ProfileReadFormElement
             title="ИНН регистрируемой организации"
             value={this.state.info.inn}
           />
-        </ProfileInfoSection>
-        <ProfileInfoSection title="Контактная информация">
-          <ProfileInfoEditFormElement
+        </ProfileSection>
+        <ProfileSection title="Контактная информация">
+          <ProfileEditFormElement
             title="Телефон предприятия"
             name="phone"
             value={this.state.info.phone}
             type="text"
           />
-          <ProfileInfoEditFormElement
+          <ProfileEditFormElement
             title="Фактический адрес"
             name="actualAddress"
             value={this.state.info.actualAddress}
           />
-          <ProfileInfoEditFormElement
+          <ProfileEditFormElement
             title="Страна"
             name="country"
             value={this.state.info.country}
           />
-          <ProfileInfoEditFormElement title="Город " name="city" value={this.state.info.city} />
-          <ProfileInfoEditFormElement title="Улица" name="street" value={this.state.info.street} />
-          <ProfileInfoEditFormElement title="Дом" name="building" value={this.state.info.building} />
-          <ProfileInfoEditFormElement title="Офис" name="office" value={this.state.info.office} />
-        </ProfileInfoSection>
-        <ProfileInfoSection title="Дополнительная информация">
-          <ProfileInfoEditFormElement
+          <ProfileEditFormElement title="Город " name="city" value={this.state.info.city} />
+          <ProfileEditFormElement title="Улица" name="street" value={this.state.info.street} />
+          <ProfileEditFormElement title="Дом" name="building" value={this.state.info.building} />
+          <ProfileEditFormElement title="Офис" name="office" value={this.state.info.office} />
+        </ProfileSection>
+        <ProfileSection title="Дополнительная информация">
+          <ProfileEditFormElement
             title="Ссылка на сайт: "
             name="website"
             value={this.state.info.website}
             type="textarea"
           />
-          <ProfileInfoEditFormElement
+          <ProfileEditFormElement
             title="Краткое описание"
             name="description"
             value={this.state.info.description}
             type="textarea"
           />
-          <ProfileInfoEditFormElement
+          <ProfileEditFormElement
             title="Сфера интересов организации"
             name="interests"
             value={this.state.info.interests}
             type="textarea"
           />
-          <ProfileInfoEditFormElement title="Логотип" type="file" />
-        </ProfileInfoSection>
+          <ProfileEditFormElement title="Логотип" type="file" />
+        </ProfileSection>
       </form>
     );
   }

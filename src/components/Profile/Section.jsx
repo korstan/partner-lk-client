@@ -1,7 +1,7 @@
 import React from 'react';
 import './Info.css';
 
-export default function ProfileInfoSection({ title, children }) {
+export default function ProfileSection({ title, children }) {
   return (
       <section className="info-section">
         <h3>{title}</h3>

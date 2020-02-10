@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ProfileInfoEditFormElement({type, name, value, title}) {
+export default function ProfileEditFormElement({type, name, value, title}) {
   let inputElement;
   if (type === 'textarea')
     inputElement = (
