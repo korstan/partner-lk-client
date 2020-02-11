@@ -1,6 +1,7 @@
 import validator from 'validator';
 
 const VALID_MESSAGE = () => ({ isValid: true, errorMessage: null });
+const INVALID_MESSAGE = (errorMessage) => ({ isValid: false, errorMessage });
 
 const ERROR_MESSAGE = {
   isEmpty: 'Поле не заполнено',
@@ -26,76 +27,74 @@ const ERROR_MESSAGE = {
 
 function lastname(lastname) {
   if (validator.isEmpty(lastname))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isEmpty };
+    return INVALID_MESSAGE(ERROR_MESSAGE.isEmpty);
   if (!validator.isAlpha(lastname, 'ru-RU'))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isAlpha };
+    return INVALID_MESSAGE(ERROR_MESSAGE.isAlpha);
   return VALID_MESSAGE();
 }
+
 function firstname(firstname) {
   if (validator.isEmpty(firstname))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isEmpty };
+    return INVALID_MESSAGE(ERROR_MESSAGE.isEmpty);
   if (!validator.isAlpha(firstname, 'ru-RU'))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isAlpha };
+    return INVALID_MESSAGE(ERROR_MESSAGE.isAlpha);
   return VALID_MESSAGE();
 }
+
 function patronymic(patronymic) {
   if (!validator.isEmpty(patronymic) && !validator.isAlpha(patronymic, 'ru-RU'))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isAlpha };
+    return INVALID_MESSAGE(ERROR_MESSAGE.isAlpha);
   return VALID_MESSAGE();
 }
+
 function email(email) {
-  if (validator.isEmpty(email))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isEmpty };
-  if (!validator.isEmail(email))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isEmail };
+  if (validator.isEmpty(email)) return INVALID_MESSAGE(ERROR_MESSAGE.isEmpty);
+  if (!validator.isEmail(email)) return INVALID_MESSAGE(ERROR_MESSAGE.isEmail);
   return VALID_MESSAGE();
 }
 function phone(phone) {
-  if (validator.isEmpty(phone))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isEmpty };
+  if (validator.isEmpty(phone)) return INVALID_MESSAGE(ERROR_MESSAGE.isEmpty);
   if (!validator.isNumeric(phone, { no_symbols: true }))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.phone.IsNumeric };
-  if (phone[0] !== '7')
-    return { isValid: false, errorMessage: ERROR_MESSAGE.phone.FirstNumber };
+    return INVALID_MESSAGE(ERROR_MESSAGE.phone.IsNumeric);
+  if (phone[0] !== '7') return INVALID_MESSAGE(ERROR_MESSAGE.phone.FirstNumber);
   if (!validator.isLength(phone, { min: 11, max: 11 }))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.phone.IsLength };
+    return INVALID_MESSAGE(ERROR_MESSAGE.phone.IsLength);
   return VALID_MESSAGE();
 }
 function originalPassword(password) {
   if (!validator.isLength(password, { min: 8, max: 20 }))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.password.isLength };
+    return INVALID_MESSAGE(ERROR_MESSAGE.password.isLength);
   if (validator.isNumeric(password, { no_symbols: true }))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.password.isNumeric };
+    return INVALID_MESSAGE(ERROR_MESSAGE.password.isNumeric);
   return VALID_MESSAGE();
 }
 
 function confirmPassword(password, confirmPassword) {
   if (confirmPassword !== password) {
-    return { isValid: false, errorMessage: ERROR_MESSAGE.password.areEqual };
+    return INVALID_MESSAGE(ERROR_MESSAGE.password.areEqual);
   }
   return originalPassword(confirmPassword);
 }
 function organization(organization) {
   if (validator.isEmpty(organization))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isEmpty };
+    return INVALID_MESSAGE(ERROR_MESSAGE.isEmpty);
   return VALID_MESSAGE();
 }
 function inn(inn) {
   if (!validator.isNumeric(inn, { no_symbols: true }))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.inn.isNumeric };
+    return INVALID_MESSAGE(ERROR_MESSAGE.inn.isNumeric);
   if (!validator.isLength(inn, { min: 10, max: 10 }))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.inn.isLength };
+    return INVALID_MESSAGE(ERROR_MESSAGE.inn.isLength);
   return VALID_MESSAGE();
 }
 function position(position) {
   if (validator.isEmpty(position))
-    return { isValid: false, errorMessage: ERROR_MESSAGE.isEmpty };
+    return INVALID_MESSAGE(ERROR_MESSAGE.isEmpty);
   return VALID_MESSAGE();
 }
 function personalData(personalData) {
-  if (!personalData)
-    return { isValid: false, errorMessage: ERROR_MESSAGE.personalData };
-  return VALID_MESSAGE(); 
+  if (!personalData) return INVALID_MESSAGE(ERROR_MESSAGE.personalData);
+  return VALID_MESSAGE();
 }
 
 function areAllFieldsValid(info) {
@@ -148,17 +147,6 @@ function getFullValidationObject(info) {
 }
 
 export default {
-  lastname,
-  firstname,
-  patronymic,
-  email,
-  phone,
-  originalPassword,
-  confirmPassword,
-  organization,
-  inn,
-  position,
-  personalData,
   areAllFieldsValid,
   getInitialObject,
   getFullValidationObject,
