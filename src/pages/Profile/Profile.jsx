@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route, useRouteMatch, useHistory } from 'react-router-dom';
-import Header from 'components/UI/Header/Header';
-import HeaderNavbar from 'components/UI/Header/Navbar/Navbar';
-import HeaderNavbarLink from 'components/UI/Header/Navbar/Link';
+import Header from 'components/shared/Header/Header';
+import HeaderNavbar from 'components/shared/Header/Navbar/Navbar';
+import HeaderNavbarLink from 'components/shared/Header/Navbar/Link';
 import PageProfileEdit from 'pages/Profile/Edit';
 import PageProfileIndex from 'pages/Profile/Index';
 

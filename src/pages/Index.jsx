@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from 'components/UI/Header/Header';
-import HeaderNavbar from 'components/UI/Header/Navbar/Navbar';
-import HeaderNavbarLink from 'components/UI/Header/Navbar/Link';
+import Header from 'components/shared/Header/Header';
+import HeaderNavbar from 'components/shared/Header/Navbar/Navbar';
+import HeaderNavbarLink from 'components/shared/Header/Navbar/Link';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import HomeModal from 'components/Home/Modal/Modal';
 import HomeModalLoginFormContainer from 'components/Home/Modal/LoginForm/Container';
