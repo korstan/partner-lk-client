@@ -5,6 +5,7 @@ import HeaderNavbar from 'components/shared/Header/Navbar/Navbar';
 import HeaderNavbarLink from 'components/shared/Header/Navbar/Link';
 import PageProfileEdit from 'pages/Profile/Edit';
 import PageProfileIndex from 'pages/Profile/Index';
+import AuthService from 'services/auth';
 
 export default function PageProfile() {
   const match = useRouteMatch();
@@ -16,7 +17,10 @@ export default function PageProfile() {
         <HeaderNavbar>
           <HeaderNavbarLink
             name="Выйти"
-            handleClickEvent={() => history.push('/')}
+            handleClickEvent={() => {
+              AuthService.signOut();
+              history.push('/');
+            }}
           />
         </HeaderNavbar>
       </Header>

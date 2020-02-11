@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import HomeModalLoginForm from 'components/Home/Modal/LoginForm/LoginForm';
+import AuthService from 'services/auth';
 
-export default class Container extends Component {
+export default class HomeModalLoginFormContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -28,8 +29,11 @@ export default class Container extends Component {
     }));
   }
 
-  handleSubmit() {
-    this.props.routeToProfile();
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const {email, password} = this.state.user;
+    AuthService.signIn(email, password).then(this.props.routeToProfile);
   }
 
   render() {

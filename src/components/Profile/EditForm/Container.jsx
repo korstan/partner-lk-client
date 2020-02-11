@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import ProfileService from 'services/profile';
 import ProfileEditForm from 'components/Profile/EditForm/EditForm';
 import ProfileTabsContainer from 'components/Profile/Tabs/Container';
 import ProfileTabsElement from 'components/Profile/Tabs/Element';
@@ -20,21 +20,22 @@ export default class ProfileEditFormContainer extends Component {
   }
 
   componentDidMount() {
-    Axios.get(URL)
-      .then(res => {
-        this.setState({ info: res.data });
+    ProfileService.getProfile()
+      .then((data) => {
+        this.setState({ info: data });
       })
       .then(() => this.setState({ infoIsLoading: false }));
   }
 
   async submitInfo() {
-    await Axios.put(URL, this.state.info);
-    this.props.routeToProfile();
+    ProfileService.updateProfile(this.state.info).then(
+      this.props.routeToProfile,
+    );
   }
 
   handleChange({ target }) {
     const { name, value } = target;
-    this.setState(previousState => ({
+    this.setState((previousState) => ({
       info: {
         ...previousState.info,
         [name]: value,
@@ -46,10 +47,7 @@ export default class ProfileEditFormContainer extends Component {
     return (
       <>
         <ProfileTabsContainer>
-          <ProfileTabsElement
-            title="Cохранить"
-            onClick={this.submitInfo}
-          />
+          <ProfileTabsElement title="Cохранить" onClick={this.submitInfo} />
           <ProfileTabsElement
             title="Отмена"
             onClick={this.props.routeToProfile}

@@ -19,66 +19,66 @@ export default function EditForm({ info, handleChange }) {
       <ProfileSection title="Контактная информация">
         <ProfileEditFormElement
           title="Телефон предприятия"
-          name="phone"
-          value={info.phone}
+          name="contactPhone"
+          value={info.contactPhone}
           onChange={handleChange}
         />
         <ProfileEditFormElement
           title="Фактический адрес"
-          name="actualAddress"
-          value={info.actualAddress}
+          name="contactAddress"
+          value={info.contactAddress}
           onChange={handleChange}
         />
         <ProfileEditFormElement
           title="Страна"
-          name="country"
-          value={info.country}
+          name="contactCountry"
+          value={info.contactCountry}
           onChange={handleChange}
         />
         <ProfileEditFormElement
           title="Город "
-          name="city"
-          value={info.city}
+          name="contactCity"
+          value={info.contactCity}
           onChange={handleChange}
         />
         <ProfileEditFormElement
           title="Улица"
-          name="street"
-          value={info.street}
+          name="contactStreet"
+          value={info.contactStreet}
           onChange={handleChange}
         />
         <ProfileEditFormElement
           title="Дом"
-          name="building"
-          value={info.building}
+          name="contactBuilding"
+          value={info.contactBuilding}
           onChange={handleChange}
         />
         <ProfileEditFormElement
           title="Офис"
-          name="office"
-          value={info.office}
+          name="contactOffice"
+          value={info.contactOffice}
           onChange={handleChange}
         />
       </ProfileSection>
       <ProfileSection title="Дополнительная информация">
         <ProfileEditFormElement
           title="Ссылка на сайт: "
-          name="website"
-          value={info.website}
+          name="extraWebsite"
+          value={info.extraWebsite}
           type="textarea"
           onChange={handleChange}
         />
         <ProfileEditFormElement
           title="Краткое описание"
-          name="description"
-          value={info.description}
+          name="extraAbout"
+          value={info.extraAbout}
           type="textarea"
           onChange={handleChange}
         />
         <ProfileEditFormElement
           title="Сфера интересов организации"
-          name="interests"
-          value={info.interests}
+          name="extraInterests"
+          value={info.extraInterests}
           type="textarea"
           onChange={handleChange}
         />

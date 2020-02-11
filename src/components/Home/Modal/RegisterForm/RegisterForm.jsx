@@ -30,7 +30,7 @@ export default function HomeModalRegisterForm({
         <div className="register-form__row">
           <div className="register-form__column">
             <HomeModalRegisterFormInput
-              name="lastName"
+              name="lastname"
               type="text"
               title="Фамилия"
               required
@@ -38,7 +38,7 @@ export default function HomeModalRegisterForm({
               onChange={handleChange}
             />
             <HomeModalRegisterFormInput
-              name="firstName"
+              name="firstname"
               type="text"
               title="Имя"
               required

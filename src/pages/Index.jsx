@@ -9,7 +9,7 @@ import HomeModalRegisterFormContainer from 'components/Home/Modal/RegisterForm/C
 
 export default function Index() {
   const history = useHistory();
-
+  const routeTo = (route) => () => history.push(route);
   return (
     <div className="Home">
       <Header>
@@ -29,16 +29,17 @@ export default function Index() {
           <Route path="/register">
             <HomeModal>
               <HomeModalRegisterFormContainer
-                handleClose={() => history.push('/')}
+                routeToProfile={routeTo('/profile')}
+                handleClose={routeTo('/')}
               />
             </HomeModal>
           </Route>
           <Route path="/login">
             <HomeModal>
               <HomeModalLoginFormContainer
-                routeToProfile={() => history.push('/profile')}
-                routeToRegister={() => history.push('/register')}
-                handleClose={() => history.push('/')}
+                routeToProfile={routeTo('/profile')}
+                routeToRegister={routeTo('/register')}
+                handleClose={routeTo('/')}
               />
             </HomeModal>
           </Route>
