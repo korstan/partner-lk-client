@@ -1,3 +1,3 @@
 export default {
-  apiUrl: 'https://partner-lk-server.herokuapp.com',
+  apiUrl: 'http://localhost:4000',
 };
