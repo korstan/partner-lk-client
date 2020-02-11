@@ -1,19 +1,33 @@
 import React from 'react';
 
-export default function HomeModalRegisterFormCheckbox(props) {
+export default function HomeModalRegisterFormCheckbox({
+  required,
+  name,
+  onChange,
+  placeholder,
+  title,
+  validation,
+}) {
   return (
-    <div className="register-form__group">
-      <span className="register-form__label" style={{ color: 'red' }}>{props.required && '*'} </span>
-      <label htmlFor={props.name} className="register-form__label-checkbox">
-        <input
-          id={props.name}
-          name={props.name}
-          type="checkbox"
-          onChange={props.onChange}
-          placeholder={props.placeholder}
-        />
-        {` ${props.title}`}
-      </label>
-    </div>
+    <>
+      <div className="register-form__group">
+        <span className="register-form__label" style={{ color: 'red' }}>
+          {required && '*'}{' '}
+        </span>
+        <label htmlFor={name} className="register-form__label-checkbox">
+          <input
+            id={name}
+            name={name}
+            type="checkbox"
+            onChange={onChange}
+            placeholder={placeholder}
+          />
+          {` ${title}`}
+        </label>
+      </div>
+      <div className="register-form__validation-error">
+        {validation[name].errorMessage}
+      </div>
+    </>
   );
 }

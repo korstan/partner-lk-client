@@ -5,14 +5,15 @@ import handleResponseError from 'helpers/handleResponseError';
 
 function getCurrentToken() {
   return localStorage.getItem('accessToken');
-} 
+}
 
 function signUp(credentials) {
   return Axios.post(`${config.apiUrl}/auth/register`, credentials)
     .then(handleResponse)
     .then((data) => {
       localStorage.setItem('accessToken', data.token);
-    }).catch(handleResponseError);
+    })
+    .catch(handleResponseError);
 }
 
 function signIn(email, password) {
@@ -20,7 +21,8 @@ function signIn(email, password) {
     .then(handleResponse)
     .then((data) => {
       localStorage.setItem('accessToken', data.token);
-    }).catch(handleResponseError);
+    })
+    .catch(handleResponseError);
 }
 
 function signOut() {

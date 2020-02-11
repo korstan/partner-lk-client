@@ -1,27 +1,13 @@
 import React from 'react';
 import HomeModalRegisterFormInput from 'components/Home/Modal/RegisterForm/Input';
 import HomeModalRegisterFormCheckbox from 'components/Home/Modal/RegisterForm/Checkbox';
-// import Validator from 'validator';
 import 'components/Home/Modal/RegisterForm/RegisterForm.css';
-
-// const validator = {
-//   lastName: value => value && Validator.isAlpha(value, 'ru-RU'),
-//   firstName: value => value && Validator.isAlpha(value, 'ru-RU'),
-//   patronymic: value => Validator.isAlpha(value, 'ru-RU') || value === '',
-//   email: value => Validator.isEmail(value),
-//   phone: value => Validator.isMobilePhone(value, 'ru-RU'),
-//   password: value => value.length >= 8 && !Validator.isNumeric(value),
-//   confirmPassword: value => value.length >= 8 && !Validator.isNumeric(value),
-//   organization: value => value,
-//   inn: value => value.length === 12 && Validator.isNumeric(value),
-//   position: value => value,
-//   personalData: value => value,
-// };
 
 export default function HomeModalRegisterForm({
   handleChange,
   handleSubmit,
   handleClose,
+  validation,
 }) {
   return (
     <div id="register-form__wrapper" className="modal-content">
@@ -36,6 +22,7 @@ export default function HomeModalRegisterForm({
               required
               placeholder="Введите вашу фамилию"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormInput
               name="firstname"
@@ -44,6 +31,7 @@ export default function HomeModalRegisterForm({
               required
               placeholder="Ваше Имя"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormInput
               name="patronymic"
@@ -51,6 +39,7 @@ export default function HomeModalRegisterForm({
               title="Отчество"
               placeholder="Ваше Отчество"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormInput
               name="email"
@@ -59,6 +48,7 @@ export default function HomeModalRegisterForm({
               required
               placeholder="yourorg@domain.ru"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormInput
               name="phone"
@@ -67,6 +57,7 @@ export default function HomeModalRegisterForm({
               required
               placeholder="7XXXXXXXXXX"
               onChange={handleChange}
+              validation={validation}
             />
           </div>
           <div className="register-form__column">
@@ -77,6 +68,7 @@ export default function HomeModalRegisterForm({
               required
               placeholder="Введите пароль"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormInput
               name="confirmPassword"
@@ -85,6 +77,7 @@ export default function HomeModalRegisterForm({
               required
               placeholder="Введите пароль повторно"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormInput
               name="organization"
@@ -93,6 +86,7 @@ export default function HomeModalRegisterForm({
               required
               placeholder="Название регистрируемой организации"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormInput
               name="inn"
@@ -101,6 +95,7 @@ export default function HomeModalRegisterForm({
               required
               placeholder="ИНН регистрируемой организации"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormInput
               name="position"
@@ -109,12 +104,14 @@ export default function HomeModalRegisterForm({
               required
               placeholder="Ваша должность в организации"
               onChange={handleChange}
+              validation={validation}
             />
             <HomeModalRegisterFormCheckbox
               name="personalData"
               type="checkbox"
               title="Я даю согласие на обработку данных"
               onChange={handleChange}
+              validation={validation}
               required
             />
             <div className="register-form__group-btns">

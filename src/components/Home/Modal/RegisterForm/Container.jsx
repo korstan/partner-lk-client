@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import HomeModalRegisterForm from 'components/Home/Modal/RegisterForm/RegisterForm';
 import AuthService from 'services/auth';
+import RegisterFormValidator from 'helpers/validateRegisterForm';
+import validator from 'validator';
 
 export default class HomeModalRegisterFormContainer extends Component {
   constructor(props) {
@@ -20,6 +22,7 @@ export default class HomeModalRegisterFormContainer extends Component {
         position: '',
         personalData: false,
       },
+      validation: RegisterFormValidator.getInitialObject(),
     };
 
     this.handleInput = this.handleInput.bind(this);
@@ -28,7 +31,10 @@ export default class HomeModalRegisterFormContainer extends Component {
 
   handleInput({ target }) {
     const { name } = target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value =
+      target.type === 'checkbox'
+        ? target.checked
+        : validator.trim(target.value);
     this.setState((previousState) => ({
       newUser: {
         ...previousState.newUser,
@@ -40,6 +46,14 @@ export default class HomeModalRegisterFormContainer extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { newUser } = this.state;
+    const validation = RegisterFormValidator.getFullValidationObject(newUser);
+
+    this.setState({
+      validation,
+    });
+
+    if (!validation.isFormValid) return;
+
     const { routeToProfile } = this.props;
 
     AuthService.signUp({
@@ -57,13 +71,13 @@ export default class HomeModalRegisterFormContainer extends Component {
 
   render() {
     const { handleClose } = this.props;
-    const { newUser } = this.state;
+    const { validation } = this.state;
     return (
       <HomeModalRegisterForm
         handleSubmit={this.handleSubmit}
         handleChange={this.handleInput}
         handleClose={handleClose}
-        newUser={newUser}
+        validation={validation}
       />
     );
   }
