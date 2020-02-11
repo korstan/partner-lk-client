@@ -7,7 +7,7 @@ export default function HomeModalLoginFormInput(props) {
       id={props.name}
       name={props.name}
       type={props.type}
-      onChange={props.handleChange}
+      onChange={props.onChange}
       placeholder={props.placeholder}
     />
   );

@@ -3,38 +3,9 @@ import HomeModalLoginFormInput from 'components/Home/Modal/LoginForm/Input';
 import 'components/Home/Modal/LoginForm/LoginForm.css';
 
 export default class HomeModalLoginForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      newUser: {
-        email: '',
-        password: '',
-        remember: false,
-      },
-    };
-
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSwitchToRegisterModal = this.handleSwitchToRegisterModal.bind(this);
-  }
-
-  handleSwitchToRegisterModal(e) {
-    e.preventDefault();
-    this.props.handleSwitchToRegisterModal();
-  }
-
-  handleInput({ target }) {
-    const { name } = target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState(previousState => ({
-      newUser: {
-        ...previousState.newUser,
-        [name]: value,
-      },
-    }));
-  }
-
   render() {
+    const { routeToRegister, handleInput, handleSubmit } = this.props;
+
     return (
       <div id="login-form__wrapper" className="modal-content">
         <div id="login-form__close-btn" onClick={this.props.handleClose}>
@@ -45,27 +16,30 @@ export default class HomeModalLoginForm extends Component {
           <HomeModalLoginFormInput
             name="email"
             type="text"
-            handleChange={this.handleInput}
+            onChange={handleInput}
             placeholder="Введите e-mail"
           />
           <HomeModalLoginFormInput
             name="password"
             type="password"
-            handleChange={this.handleInput}
+            onChange={handleInput}
             placeholder="Введите пароль"
           />
           <div className="login-form__password-options">
             <label htmlFor="">
-              <input type="checkbox" />
+              <input onChange={handleInput} name="remember" type="checkbox" />
               Запомнить меня
             </label>
             <a href="">Забыли пароль</a>
           </div>
-          <button id="login-form__submit-btn" onClick={this.props.handleSubmit}>
+          <button id="login-form__submit-btn" onClick={handleSubmit}>
             Войти
           </button>
           <span>
-            Или <a href="" onClick={this.handleSwitchToRegisterModal}>зарегистрироваться</a>
+            Или{' '}
+            <a href="" onClick={routeToRegister}>
+              зарегистрироваться
+            </a>
           </span>
         </form>
       </div>

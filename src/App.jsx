@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import PageHome from 'pages/Home';
+import PageIndex from 'pages/Index';
 import PageProfile from 'pages/Profile/Profile';
 import 'App.css';
 
@@ -12,7 +12,7 @@ export default function App() {
           <PageProfile />
         </Route>
         <Route path="/">
-          <PageHome />
+          <PageIndex />
         </Route>
       </Switch>
     </Router>
