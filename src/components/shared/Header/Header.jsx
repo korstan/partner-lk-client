@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import 'components/header/Header.css';
-import Navbar from 'components/header/Navbar';
+import 'components/shared/Header/Header.css';
 
 export default class Header extends Component {
-  static Navbar = Navbar;
   render() {
     return <header>{this.props.children}</header>;
   }

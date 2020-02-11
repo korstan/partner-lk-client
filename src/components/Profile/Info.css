@@ -1,0 +1,71 @@
+h2 {
+  margin-top: 15px;
+}
+
+.info-container {
+  background-color: white;
+  padding: 20px 20px;
+  overflow: inherit;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  box-shadow: 0 0 5px 0 rgba(220, 220, 220, 1);
+  z-index: 100;
+}
+
+.info-tabs__container {
+  display: flex;
+  position: static;
+  justify-content: flex-end;
+}
+
+.info-tabs__element {
+  cursor: pointer;
+  border: none;
+  margin-left: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 5px 15px 8px ;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.info-section {
+  margin-top: 30px;
+}
+
+.info-section:first-child {
+  margin-top: 0;
+}
+
+.info-section__element {
+  margin-top: 20px;
+}
+.info-section__element > * {
+  display: block;
+}
+.info-section__element span {
+  margin-top: 10px;
+}
+
+.info-section__element input, textarea {
+  resize: none;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.info-section_data-group {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-flow: row;
+  grid-auto-columns: 100px;
+  grid-gap: 5px;
+  word-wrap: break-word;
+}
+
+.info-section h3 {
+  font-weight: 800;
+}
+
+.info-section label {
+  margin-top: 10px;
+}
