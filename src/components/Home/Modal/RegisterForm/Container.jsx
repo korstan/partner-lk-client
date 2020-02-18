@@ -66,7 +66,18 @@ export default class HomeModalRegisterFormContainer extends Component {
       organization: newUser.organization,
       inn: newUser.inn,
       position: newUser.position,
-    }).then(routeToProfile);
+    })
+      .then(routeToProfile)
+      .catch((err) => {
+        if (err.status === 400) {
+          if (err.name === 'EmailError') {
+            alert('Данный e-mail уже зарегистрирован');
+          }
+          if (err.name === 'InnError') {
+            alert('Данный ИНН уже зарегистрирован');
+          }
+        } else alert('Произошла неизвестная ошибка');
+      });
   }
 
   render() {
