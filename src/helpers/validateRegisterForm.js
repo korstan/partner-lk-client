@@ -151,17 +151,3 @@ export default {
   getInitialObject,
   getFullValidationObject,
 };
-
-// const validator = {
-//   lastName: value => value && Validator.isAlpha(value, 'ru-RU'),
-//   firstName: value => value && Validator.isAlpha(value, 'ru-RU'),
-//   patronymic: value => Validator.isAlpha(value, 'ru-RU') || value === '',
-//   email: value => Validator.isEmail(value),
-//   phone: value => Validator.isMobilePhone(value, 'ru-RU'),
-//   password: value => value.length >= 8 && !Validator.isNumeric(value),
-//   confirmPassword: value => value.length >= 8 && !Validator.isNumeric(value),
-//   organization: value => value,
-//   inn: value => value.length === 12 && Validator.isNumeric(value),
-//   position: value => value,
-//   personalData: value => value,
-// };
