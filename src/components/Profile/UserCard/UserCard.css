@@ -1,0 +1,11 @@
+.user-card__wrapper {
+    display: flex;
+    padding: 0 20px;
+}
+
+.user-card__info {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

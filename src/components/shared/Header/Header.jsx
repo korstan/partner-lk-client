@@ -3,6 +3,12 @@ import 'components/shared/Header/Header.css';
 
 export default class Header extends Component {
   render() {
-    return <header>{this.props.children}</header>;
+    const { left, right } = this.props;
+    return (
+      <header>
+        <div>{left}</div>
+        <div>{right}</div>
+      </header>
+    );
   }
 }

@@ -12,18 +12,22 @@ export default function Index() {
   const routeTo = (route) => () => history.push(route);
   return (
     <div className="Home">
-      <Header>
-        <HeaderNavbar>
-          <HeaderNavbarLink
-            name="Регистрация"
-            handleClickEvent={() => history.push('/register')}
-          />
-          <HeaderNavbarLink
-            name="Войти"
-            handleClickEvent={() => history.push('/login')}
-          />
-        </HeaderNavbar>
-      </Header>
+      <Header
+        right={
+          (
+            <HeaderNavbar>
+              <HeaderNavbarLink
+                name="Регистрация"
+                handleClickEvent={() => history.push('/register')}
+              />
+              <HeaderNavbarLink
+                name="Войти"
+                handleClickEvent={() => history.push('/login')}
+              />
+            </HeaderNavbar>
+          )
+        }
+      ></Header>
       <main>
         <Switch>
           <Route path="/register">

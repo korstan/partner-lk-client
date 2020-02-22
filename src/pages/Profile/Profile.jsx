@@ -3,6 +3,7 @@ import { Switch, Route, useRouteMatch, useHistory } from 'react-router-dom';
 import Header from 'components/shared/Header/Header';
 import HeaderNavbar from 'components/shared/Header/Navbar/Navbar';
 import HeaderNavbarLink from 'components/shared/Header/Navbar/Link';
+import ProfileUserCardContainer from 'components/Profile/UserCard/Container';
 import PageProfileEdit from 'pages/Profile/Edit';
 import PageProfileIndex from 'pages/Profile/Index';
 import AuthService from 'services/auth';
@@ -13,16 +14,23 @@ export default function PageProfile() {
 
   return (
     <div className="profile">
-      <Header>
-        <HeaderNavbar>
-          <HeaderNavbarLink
-            name="Выйти"
-            handleClickEvent={() => {
-              AuthService.signOut();
-              history.push('/');
-            }}
-          />
-        </HeaderNavbar>
+      <Header
+        left={<ProfileUserCardContainer />}
+        right={
+          (
+            <HeaderNavbar>
+              <HeaderNavbarLink
+                name="Выйти"
+                handleClickEvent={() => {
+                  AuthService.signOut();
+                  history.push('/');
+                }}
+              />
+            </HeaderNavbar>
+          )
+        }
+      >
+        <ProfileUserCardContainer />
       </Header>
       <main>
         <Switch>
