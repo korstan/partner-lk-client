@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileSection from 'components/Profile/Section';
 import ProfileReadFormElement from 'components/Profile/ReadForm/Element';
 
-export default function ReadForm({ info }) {
+export default function ProfileReadForm({ info }) {
   return (
     <form className="info-container">
       <ProfileSection title="Основная информация">

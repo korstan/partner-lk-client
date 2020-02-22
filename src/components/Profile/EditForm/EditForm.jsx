@@ -3,7 +3,7 @@ import ProfileSection from 'components/Profile/Section';
 import ProfileReadFormElement from 'components/Profile/ReadForm/Element';
 import ProfileEditFormElement from 'components/Profile/EditForm/Element';
 
-export default function EditForm({ info, handleChange }) {
+export default function ProfileEditForm({ info, handleChange }) {
   return (
     <form className="info-container">
       <ProfileSection title="Основная информация">
